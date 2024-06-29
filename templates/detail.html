@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ document['verdict'] }}{{ document['id'] }}</title>
+    <!-- Bootstrap CSS -->
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @media print {
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Detail Perkara</h1>
+        <div class="mt-4">
+            <div class="row">
+                <div class="col-auto">
+                    <p><strong>ID Document:</strong> {{ document['id'] }}</p>
+                </div>
+                <div class="col">
+                    <p><strong>Owner:</strong> {{ document['owner'] }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto">
+                    <p><strong>Dakwaan:</strong> {{ document['verdict'] }}</p>
+                </div>
+                <div class="col">
+                    <p><strong>Lawyer:</strong> {{ document['lawyer'] }}</p>
+                </div>
+                <div class="col-end mb-3 no-print" style="padding-right:20px">
+                    <button class="btn btn-primary" onclick="window.print()">
+                        Print Halaman
+                    </button>
+                </div>
+            </div>
+
+            
+            
+            <p align="justify">{{ document['text'] }}</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
